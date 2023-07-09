@@ -7,6 +7,11 @@ require('dotenv').config()
 // router.get("/", (req, res) => {
 //   res.send("GET /places");
 // });
+
+app.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
 app.get("/", (req, res) => {
 
   let places = [{
