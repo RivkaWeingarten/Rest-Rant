@@ -1,5 +1,9 @@
 h1 {
     text-align: center;
-    color: rgb(237, 100, 184);
+    color: rgb(146, 100, 237);
   }
   
+  img{
+    width:300px;
+    height: 300px
+  }
