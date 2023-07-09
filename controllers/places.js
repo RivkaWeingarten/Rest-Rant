@@ -8,6 +8,12 @@ require('dotenv').config()
 //   res.send("GET /places");
 // });
 
+app.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+
+
 app.get('/new', (req, res) => {
   res.render('places/new')
 })
