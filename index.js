@@ -3,12 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+const methodOverride = require('method-override')
 
 // Express Settings
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 app.use(express.static("public"));
+app.use(methodOverride('_method'))
 
 // Controllers & Routes
 app.use("/places", require("./controllers/places"));
@@ -23,3 +25,5 @@ app.get("*", (req, res) => {
 
 // Listen for Connections
 app.listen(process.env.PORT);
+
+
