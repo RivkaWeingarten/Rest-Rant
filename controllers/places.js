@@ -1,23 +1,21 @@
-// const router = require("express").Router();
-const express = require("express");
-const app = express();
+const router = require("express").Router();
+// const express = require("express");
+// const app = express();
 require("dotenv").config();
 const places = require("../models/places.js");
 
-// const app = express()
-// router.get("/", (req, res) => {
-//   res.send("GET /places");
-// });
 
-app.get("/", (req, res) => {
+
+
+
+
+router.get("/", (req, res) => {
   res.render("places/index", { places });
 });
 
-// More code ...
-
 //add new
-app.post("/", (req, res) => {
-  // console.log(req.body);
+
+router.post("/", (req, res) => {
   if (!req.body.pic) {
     // Default image if one is not provided
     req.body.pic = "http://placekitten.com/400/400";
@@ -32,23 +30,11 @@ app.post("/", (req, res) => {
   res.redirect("/places");
 });
 
-app.get("/new", (req, res) => {
+router.get("/new", (req, res) => {
   res.render("places/new");
 });
 
-app.get("/:id/edit", (req, res) => {
-  let id = Number(req.params.id);
-  
-  if (isNaN(id)) {
-    res.render("error404");
-  } else if (!places[id]) {
-    res.render("error404");
-  } else {
-    res.render("places/edit", { place: places[id] });
-  }
-});
-
-app.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   let id = Number(req.params.id);
   if (isNaN(id)) {
     res.render("error404");
@@ -59,15 +45,13 @@ app.get("/:id", (req, res) => {
   }
 });
 
-app.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   let id = Number(req.params.id);
 
   if (isNaN(id)) {
     res.render("error404");
-
   } else if (!places[id]) {
     res.render("error404");
-
   } else {
     // Dig into req.body and make sure data is valid
     if (!req.body.pic) {
@@ -87,7 +71,7 @@ app.put("/:id", (req, res) => {
   }
 });
 
-app.delete("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   let id = Number(req.params.id);
   if (isNaN(id)) {
     res.render("error404");
@@ -99,8 +83,21 @@ app.delete("/:id", (req, res) => {
   }
 });
 
+// ERROR: id is not sent to edit form
+router.get("/:id/edit", (req, res) => {
+    let id = Number(req.params.id);
+  if (isNaN(id)) {
+    res.render("error404");
+  } else if (!places[id]) {
+    res.render("error404");
+  } else {
+    res.render("places/edit", { place: places[id] });
+  }
+});
+
+//! id is not passed through
 
 
 
 
-module.exports = app;
+module.exports = router;
