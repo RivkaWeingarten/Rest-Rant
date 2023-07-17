@@ -32,7 +32,7 @@ function show(data) {
               </button>
             </form>
           </div>
-         
+         <hr />
         </div>
         <div className="align-items-center">
           <h2>Comments</h2>

@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: lightblue;
+  text-align: center;
+}
 h1 {
   text-align: center;
   color: rgb(146, 100, 237);
@@ -6,9 +13,10 @@ h1 {
 img {
   width: 300px;
   height: 300px;
-  border-radius:50%;
+  border-radius: 50%;
   border: 10px solid cornflowerblue;
-resize: none;}
+  resize: none;
+}
 
 nav {
   background-color: cornflowerblue;
@@ -35,31 +43,58 @@ nav a:hover {
   text-decoration: none;
 }
 
-body {
-  background-color: lightblue;
-  text-align: center;
-}
-
 main {
+  position: relative;
   margin-right: 20px;
   margin-left: 20px;
   background-color: white;
-  
-
+  text-align: center;
 }
 h2 {
   color: lightblue;
 }
 
-form label {
-  padding: 5px;
+form {
+  max-width: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(32, 41, 203, 0.16);
+  box-shadow: 0 5px 10px rgba(154,160,185,0.05),
+  0 15px 40px rgba(0,0,0,0.1) ;
 
+}
+
+
+
+form label {
+  position: relative;
+  padding: 5px;
   font-weight: bolder;
 }
-form input{
-  /* margin: 5px; */
-  padding:10px;
-  color:blue;
+form input {
+  position: relative;
+  padding: 10px;
+  color: blue;
   font-weight: bolder;
-  width:35vw;
+  width: 35vw;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 5px solid rgba(0, 0, 0, 0.5);
+}
+.new-form{
+  height:70vh;
+}
+input.placeholder{
+  text-align: left;
 }
