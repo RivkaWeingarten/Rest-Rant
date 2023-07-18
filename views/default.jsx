@@ -19,6 +19,7 @@ function Def(html) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/show.css" />
       </head>
       <body>
         <nav>
