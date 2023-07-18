@@ -26,17 +26,12 @@ function index(data) {
           <p>
             Located in {place.city}, {place.state}
           </p>
-          {/* /{" "}
-          <span className="${getClassByRate(vote_average)}">
-            ${vote_average}
-          </span>
-          / */}
         </div>
 
         <div class="description-show">
           <h3>Description</h3>
           {place.showEstablished()}
-         <p>Serving {place.cuisines}</p> 
+          <p>Serving {place.cuisines}</p>
         </div>
       </div>
     );
