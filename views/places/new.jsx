@@ -77,7 +77,7 @@ function new_form(data) {
               Add Place
             </button>
           </form>
-          {/* <FontAwesomeIcon icon="fa-sharp fa-regular fa-plus-large" /> */}
+       
         </div>
       </main>
     </Def>

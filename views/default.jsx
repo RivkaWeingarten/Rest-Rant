@@ -5,12 +5,12 @@ function Def(html) {
     <html>
       <head>
         <title>Title</title>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
           integrity="sha384-xmMuyYKOTol6s4bqkFx5CjR8R8mXTg5XKK+0ks8R/zyuHjUcl6JvFg2Jv31zK2q5"
           crossorigin="anonymous"
-        />
+        /> */}
 
         <link
           rel="stylesheet"
