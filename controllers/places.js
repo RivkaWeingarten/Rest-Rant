@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/new', (req, res) => {
-  res.render('places/new')
+  res.render('places/new', {body:{}})
 })
 
 router.get('/:id', (req, res) => {
@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
           message += `${err.errors[field].message}`
       }
       console.log('Validation error message', message)
-      res.render('places/new', { message })
+      res.render('places/new', { message, body: req.body })
     }
     else {
         res.render('error404')

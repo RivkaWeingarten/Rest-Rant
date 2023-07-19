@@ -2,6 +2,7 @@ const React = require("react");
 const Def = require("../default");
 
 function new_form(data) {
+  console.log(data)
   let message = "";
   if (data.message) {
     message = <h4 className="alert-danger">{data.message}</h4>;
@@ -9,7 +10,7 @@ function new_form(data) {
   return (
     <Def>
       <main>
-        <h1>Add a New Place</h1>
+        <h1>Add a New Place </h1>
         {message}
         <div className="new-form">
           <form method="POST" action="/places">
@@ -19,6 +20,9 @@ function new_form(data) {
                 className="form-control"
                 id="name"
                 name="name"
+                // {body.name}?defaultValue={body.name}: defaultValue=null
+                defaultValue={data.body.name} 
+               // {data.body.name}?`defaultValue:{data.body.name}`:placeholder: "Enter Company Name here"
                 required
                 placeholder="Enter Company Name here"
               />
@@ -29,6 +33,7 @@ function new_form(data) {
                 className="form-control"
                 id="pic"
                 name="pic"
+                defaultValue={data.pic}
                 placeholder="Enter URL for image here."
               />
             </div>
@@ -38,6 +43,7 @@ function new_form(data) {
                 className="form-control"
                 id="city"
                 name="city"
+                defaultValue={data.city}
                 placeholder="Enter City here"
               />
             </div>
@@ -47,6 +53,7 @@ function new_form(data) {
                 className="form-control"
                 id="state"
                 name="state"
+                defaultValue={data.state}
                 placeholder="Enter state here"
               />
             </div>
@@ -56,7 +63,8 @@ function new_form(data) {
                 className="form-control"
                 id="cuisines"
                 name="cuisines"
-                aria-placeholder="Enter Cuisine Here"
+                defaultValue={data.cuisines}
+                placeholder="Enter Cuisine Here"
                 required
               />
             </div>
@@ -67,7 +75,7 @@ function new_form(data) {
                 className="form-control"
                 id="founded"
                 name="founded"
-                value={new Date().getFullYear()}
+                defaultValue={new Date().getFullYear()}
               />
             </div>
             <button
@@ -77,7 +85,6 @@ function new_form(data) {
               Add Place
             </button>
           </form>
-       
         </div>
       </main>
     </Def>

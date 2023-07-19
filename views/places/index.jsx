@@ -20,7 +20,7 @@ function index(data) {
 
         <div className="place-info">
           <h3>
-            {" "}
+           
             <a href={`/places/${place.id}`}>{place.name}</a>{" "}
           </h3>
           <p>
@@ -28,8 +28,8 @@ function index(data) {
           </p>
         </div>
 
-        <div class="description-show">
-          <h3>Description</h3>
+        <div className="description-show">
+          <h3><a href={`/places/${place.id}`}>{place.name}</a></h3>
           {place.showEstablished()}
           <p>Serving {place.cuisines}</p>
         </div>
