@@ -2,7 +2,7 @@ const React = require("react");
 const Def = require("../default");
 
 function new_form(data) {
-  console.log(data)
+  console.log(data);
   let message = "";
   if (data.message) {
     message = <h4 className="alert-danger">{data.message}</h4>;
@@ -20,11 +20,9 @@ function new_form(data) {
                 className="form-control"
                 id="name"
                 name="name"
-                // {body.name}?defaultValue={body.name}: defaultValue=null
-                defaultValue={data.body.name} 
-               // {data.body.name}?`defaultValue:{data.body.name}`:placeholder: "Enter Company Name here"
+                defaultValue={data.body.name ? data.body.name : null}
+                placeholder={data.body.name ? null : "Enter Company Name here"}
                 required
-                placeholder="Enter Company Name here"
               />
             </div>
             <div className="form-group">
@@ -33,8 +31,8 @@ function new_form(data) {
                 className="form-control"
                 id="pic"
                 name="pic"
-                defaultValue={data.pic}
-                placeholder="Enter URL for image here."
+                defaultValue={data.body.pic ? data.body.pic : null}
+                placeholder={data.body.pic ? null : "Enter URL for image here."}
               />
             </div>
             <div className="form-group">
@@ -43,8 +41,8 @@ function new_form(data) {
                 className="form-control"
                 id="city"
                 name="city"
-                defaultValue={data.city}
-                placeholder="Enter City here"
+                defaultValue={data.body.city ? data.body.city : null}
+                placeholder={data.body.city ? null : "Enter City here."}
               />
             </div>
             <div className="form-group">
@@ -53,8 +51,8 @@ function new_form(data) {
                 className="form-control"
                 id="state"
                 name="state"
-                defaultValue={data.state}
-                placeholder="Enter state here"
+                defaultValue={data.body.state ? data.body.state : null}
+                placeholder={data.body.state ? null : "Enter State here."}
               />
             </div>
             <div className="form-group">
@@ -63,8 +61,10 @@ function new_form(data) {
                 className="form-control"
                 id="cuisines"
                 name="cuisines"
-                defaultValue={data.cuisines}
-                placeholder="Enter Cuisine Here"
+                defaultValue={data.body.cuisines ? data.body.cuisines : null}
+                placeholder={
+                  data.body.cuisines ? null : "Enter Cuisine(s) here."
+                }
                 required
               />
             </div>
