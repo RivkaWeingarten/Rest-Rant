@@ -62,7 +62,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: rgba(32, 41, 203, 0.16);
   box-shadow: 0 5px 10px rgba(154,160,185,0.05),
   0 15px 40px rgba(0,0,0,0.1) ;
