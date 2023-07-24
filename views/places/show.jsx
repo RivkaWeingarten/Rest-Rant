@@ -18,7 +18,7 @@ function show(data) {
     comments = data.place.comments.map((c) => {
       return (
         <div className="border">
-          <h2 className="rant">{c.rant ? "Rant! ðŸ˜¡" : "Rave! ðŸ˜»"}</h2>
+          <h2 className="rant">{c.rant ? "Rant! 😡" : "Rave! ❤️"}</h2>
           <h4>{c.content}</h4>
           <h3>
             <stong>- {c.author}</stong>
@@ -43,20 +43,21 @@ function show(data) {
             <h1>{data.place.name}</h1>
             <h2>Rating</h2>
             {rating}
-            <p>Not Rated</p>
+          
             <h2>Description</h2>
             <h3>{data.place.showEstablished()}</h3>
             <h4>Serving {data.place.cuisines}</h4>
-            <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
-              Edit
-            </a>
-            <form
-              method="POST"
-              action={`/places/${data.id}?_method=DELETE`}
-            >
+
+            <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
               <button type="submit" className="btn btn-danger">
                 Delete
               </button>
+              <a
+                href={`/places/${data.place.id}/edit`}
+                className="btn btn-warning"
+              >
+                Edit
+              </a>
             </form>
           </div>
           <hr />
@@ -106,7 +107,7 @@ function show(data) {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value="rant"
+              
                 id="rant"
                 name="rant"
               />

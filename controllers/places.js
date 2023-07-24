@@ -76,7 +76,6 @@ router.get("/:id/edit", (req, res) => {
     });
 });
 
-
 router.post("/", (req, res) => {
   db.Place.create(req.body)
     .then(() => {
@@ -102,7 +101,17 @@ router.delete("/:id/rant/:rantId", (req, res) => {
 });
 //show
 router.post("/:id/comment", (req, res) => {
-  console.log(req.body);
+  const rantValue = req.body.rant === "on";
+
+  req.body.rant = rantValue;
+  req.body.params = {
+    // id: req.body.id,
+    content: req.body.content,
+    author: req.body.author,
+    stars: req.body.stars,
+    rant: rantValue,
+  };
+
   db.Place.findById(req.params.id)
     .then((place) => {
       db.Comment.create(req.body)
