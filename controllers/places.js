@@ -112,16 +112,16 @@ router.delete("/:id/rant/:rantId", (req, res) => {
 
 //show
 router.post("/:id/comment", (req, res) => {
-  const rantValue = req.body.rant === "on";
+  req.body.rant = req.body.rant === "on";
 
-  req.body.rant = rantValue;
-  req.body.params = {
-    // id: req.body.id,
-    content: req.body.content,
-    author: req.body.author,
-    stars: req.body.stars,
-    rant: rantValue,
-  };
+
+  // req.body.params = {
+  //   // id: req.body.id,
+  //   content: req.body.content,
+  //   author: req.body.author,
+  //   stars: req.body.stars,
+  //   rant: rantValue,
+  // };
 
   db.Place.findById(req.params.id)
     .then((place) => {
@@ -144,23 +144,3 @@ router.post("/:id/comment", (req, res) => {
 const db = require("../models");
 module.exports = router;
 
-// router.post('/:id/comment', (req, res) => {
-//   console.log(req.body)
-//   db.Place.findById(req.params.id)
-//   .then(place => {
-//       db.Comment.create(req.body)
-//       .then(comment => {
-//           place.comments.push(comment.id)
-//           place.save()
-//           .then(() => {
-//               res.redirect(`/places/${req.params.id}`)
-//           })
-//       })
-//       .catch(err => {
-//           res.render('error404')
-//       })
-//   })
-//   .catch(err => {
-//       res.render('error404')
-//   })
-// })
