@@ -51,7 +51,7 @@ function show(data) {
           </div>
           <div className="col-sm-4">
             <h1>{data.place.name}</h1>
-            <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+            <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
               <div className="col-sm-24">
               <button type="submit" className="btnEditDelete">
               &#128465;
